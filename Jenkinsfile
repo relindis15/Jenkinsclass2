@@ -1,17 +1,19 @@
 pipeline {
     agent any
     tools {
-        maven 'local maven'
+        maven "local maven"
     }
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/relindis15/Jenkinsclass2.git',
-                    credentialsId: 'jay',
-                    branch 'main'
+                // Get some code from a GitHub repository
+                git url: 'https://github.com/relindis15/Jenkinsclass2.git', 
+                    branch: 'main',
+                    credentialsId: 'jay'
             }
         }
     }
 }
+
 
 
