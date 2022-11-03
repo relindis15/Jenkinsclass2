@@ -11,13 +11,15 @@ pipeline {
                     branch: 'main',
                     credentialsId: 'jay'
             }
+        
+        }
+        stage('Build') {
+            steps {
+                bat 'mvn -B -DskipTests clean package' 
+            }
         }
     }
 }
-stage('Build') {
-    steps {
-        bat 'mvn -B -DskipTests clean package' 
-    }
-}
+
 
 
